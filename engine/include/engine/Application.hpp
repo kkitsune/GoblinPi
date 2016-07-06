@@ -45,7 +45,7 @@ public:
 	virtual void mouse_move_event(glm::dvec2 const&)
 	{ }
 
-	virtual void scroll_event(glm::dvec2 const&)
+	virtual void scroll_event(glm::ivec2 const&)
 	{ }
 
 	virtual void keyboard_event(Key, bool)

@@ -78,6 +78,8 @@ int Engine::run(Application* app)
 				app->mouse_button_event({e.button.x, e.button.y}, static_cast<MouseButton>(e.button.button), false);
 			if(e.type == SDL_MOUSEBUTTONDOWN)
 				app->mouse_button_event({e.button.x, e.button.y}, static_cast<MouseButton>(e.button.button), true);
+			if(e.type == SDL_MOUSEWHEEL)
+				app->scroll_event({e.wheel.x, e.wheel.y});
 			if(e.type == SDL_WINDOWEVENT_RESIZED)
 				app->resize_event(e.window.data1, e.window.data2);
 		}
@@ -100,8 +102,6 @@ int Engine::run(Application* app)
 	delete app;
 
 	SDL_GL_DeleteContext(ctx);
-	ctx = nullptr;
-
 	SDL_DestroyWindow(_wnd);
 	_wnd = nullptr;
 
