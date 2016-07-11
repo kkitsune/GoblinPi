@@ -66,18 +66,14 @@ int Engine::run(Application* app)
 		{
 			if(e.type == SDL_WINDOWEVENT_CLOSE)
 				_running = false;
-			if(e.type == SDL_KEYUP)
-				app->keyboard_event(static_cast<Key>(e.key.keysym.scancode), false);
-			if(e.type == SDL_KEYDOWN)
-				app->keyboard_event(static_cast<Key>(e.key.keysym.scancode), true);
+			if(e.type == SDL_KEYUP || e.type == SDL_KEYDOWN)
+				app->keyboard_event(static_cast<Key>(e.key.keysym.scancode), e.type == SDL_KEYDOWN);
 			if(e.type == SDL_TEXTINPUT)
 				app->keyboard_character_event(e.text.text);
 			if(e.type == SDL_MOUSEMOTION)
 				app->mouse_move_event({e.motion.xrel, e.motion.yrel});
-			if(e.type == SDL_MOUSEBUTTONUP)
-				app->mouse_button_event({e.button.x, e.button.y}, static_cast<MouseButton>(e.button.button), false);
-			if(e.type == SDL_MOUSEBUTTONDOWN)
-				app->mouse_button_event({e.button.x, e.button.y}, static_cast<MouseButton>(e.button.button), true);
+			if(e.type == SDL_MOUSEBUTTONUP || e.type == SDL_MOUSEBUTTONDOWN)
+				app->mouse_button_event({e.button.x, e.button.y}, static_cast<MouseButton>(e.button.button), e.type == SDL_MOUSEBUTTONDOWN);
 			if(e.type == SDL_MOUSEWHEEL)
 				app->scroll_event({e.wheel.x, e.wheel.y});
 			if(e.type == SDL_WINDOWEVENT_RESIZED)
