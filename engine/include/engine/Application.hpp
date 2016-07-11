@@ -42,7 +42,7 @@ public:
 	virtual void mouse_button_event(glm::ivec2 const&, MouseButton, bool)
 	{ }
 
-	virtual void mouse_move_event(glm::dvec2 const&)
+	virtual void mouse_move_event(glm::ivec2 const&)
 	{ }
 
 	virtual void scroll_event(glm::ivec2 const&)
