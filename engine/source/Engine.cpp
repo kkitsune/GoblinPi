@@ -1,6 +1,7 @@
 #include "engine/Engine.hpp"
 
 #include <SDL2/SDL.h>
+#include <iostream>
 
 using namespace std;
 using namespace glm;
@@ -49,6 +50,12 @@ int Engine::run(Application* app)
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
 	SDL_GL_SetSwapInterval(1);
 	SDL_GL_SwapWindow(_wnd);
+
+	cout << "<=-- OpenGL Info --=>" << endl
+		 << " Renderer : " << glGetString(GL_RENDERER) << endl
+		 << " Version : " << glGetString(GL_VERSION) << endl
+		 << " Vendor : " << glGetString(GL_VENDOR) << endl
+		 << " GLSL Version : " << glGetString(GL_SHADING_LANGUAGE_VERSION) << endl << endl;
 
 	app->initialize();
 
