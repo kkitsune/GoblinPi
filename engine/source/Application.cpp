@@ -1,12 +1,10 @@
 #include "engine/Application.hpp"
 
-Application::Application(Engine* e) : _engine(e)
-{
-}
+Application::Application()
+{ }
 
 Application::~Application()
-{
-}
+{ }
 
 void Application::resize_event(int width, int height)
 {

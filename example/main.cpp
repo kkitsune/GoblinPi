@@ -1,6 +1,5 @@
 #include <engine/Application.hpp>
 #include <engine/Painter.hpp>
-#include <iostream>
 
 using namespace std;
 
@@ -9,22 +8,19 @@ class ExampleApplication : public Application
 	Painter* _p;
 
 public:
-	ExampleApplication(Engine* e) : Application(e), _p(nullptr)
+	ExampleApplication() : _p(nullptr)
 	{
-		cerr << "ExampleApplication => Constructed" << endl;
-		for(auto i : engine().arguments())
-			cout << " - " << i << endl;
-		cout << endl;
+		WARN("ExampleApplication => Constructed");
 	}
 
 	virtual ~ExampleApplication()
 	{
-		cerr << "ExampleApplication => Destroyed" << endl;
+		WARN("ExampleApplication => Destroyed");
 	}
 
 	virtual void initialize() override
 	{
-		cerr << "ExampleApplication => Initialized" << endl;
+		WARN("ExampleApplication => Initialized");
 		_p = new Painter;
 	}
 
@@ -48,7 +44,7 @@ public:
 	{
 		if(key == Key::Escape && pressed)
 		{
-			cerr << "ExampleApplication => Escape pressed" << endl;
+			WARN("ExampleApplication => Escape pressed");
 			engine().exit();
 		}
 	}
@@ -60,4 +56,4 @@ public:
 };
 
 int main(int argc, char* argv[])
-{ return Engine(argc, argv).run<ExampleApplication>(); }
+{ return Engine::run<ExampleApplication>(argc, argv); }

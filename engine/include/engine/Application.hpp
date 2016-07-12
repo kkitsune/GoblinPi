@@ -17,11 +17,8 @@ public:
 
 	Application& operator=(Application&& other) = default;
 
-	Engine& engine() const
-	{ return *_engine; }
-
-	Engine& engine()
-	{ return *_engine; }
+	static Engine& engine()
+	{ return Engine::ref(); }
 
 	virtual Duration fixed_time_step() const
 	{ return duration_cast<Duration>(std::chrono::duration<Duration::rep, std::ratio<1, 30>>{1}); }
@@ -57,7 +54,5 @@ public:
 	virtual void resize_event(int width, int height);
 
 protected:
-	Application(Engine* e);
-
-	Engine* _engine;
+	Application();
 };

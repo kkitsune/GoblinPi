@@ -2,14 +2,31 @@
 
 #include <SDL2/SDL.h>
 #include <iostream>
+#include <SDL2/SDL_video.h>
 
 using namespace std;
 using namespace glm;
 
-Engine::Engine(int argc, char** argv) : _wnd(nullptr)
+unique_ptr<Engine> Engine::_inst{};
+
+Engine::Engine(int argc, char* argv[]) : _log{}, _wnd{nullptr}
 {
 	for(int i = 0; i < argc; ++i)
 		_args.push_back(string{argv[i]});
+
+	std::vector<spdlog::sink_ptr> sinks
+	{
+		make_shared<spdlog::sinks::ansicolor_sink>(make_shared<spdlog::sinks::stdout_sink_st>()),
+		make_shared<spdlog::sinks::simple_file_sink_st>("GoblinPi.log", true)
+	};
+	_log = make_shared<spdlog::logger>("engine", begin(sinks), end(sinks));
+	_log->set_level(spdlog::level::trace);
+	spdlog::register_logger(_log);
+
+	string cmd;
+	for(auto a : _args)
+		cmd += a + " ";
+	_log->warn("Invocation : {}", cmd);
 }
 
 Engine::~Engine()
@@ -17,6 +34,8 @@ Engine::~Engine()
 
 int Engine::run(Application* app)
 {
+	TRACE("Engine::run => Begin");
+
 	_running = true;
 	_exit_code = 0;
 	SDL_Init(SDL_INIT_VIDEO);
@@ -29,6 +48,8 @@ int Engine::run(Application* app)
 	SDL_DisplayMode mode;
 	SDL_GetClosestDisplayMode(0, &ask_mode, &mode);
 
+	DEBUG("Engine::run => Display Mode selected : {}x{}@{}", mode.w, mode.h, mode.refresh_rate);
+
 	SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
 	SDL_GL_SetAttribute(SDL_GL_CONTEXT_EGL, SDL_TRUE);
 	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 2);
@@ -39,7 +60,10 @@ int Engine::run(Application* app)
 	SDL_GLContext ctx = SDL_GL_CreateContext(_wnd);
 	SDL_GL_MakeCurrent(_wnd, ctx);
 
+	TRACE("Engine::run => Window created");
+
 	gladLoadGLES2Loader((GLADloadproc) &SDL_GL_GetProcAddress);
+	TRACE("Engine::run => OpenGL ES loaded");
 
 	auto fb_size = framebuffer_size();
 	glViewport(0, 0, fb_size.x, fb_size.y);
@@ -51,14 +75,16 @@ int Engine::run(Application* app)
 	SDL_GL_SetSwapInterval(1);
 	SDL_GL_SwapWindow(_wnd);
 
-	cout << "<=-- OpenGL Info --=>" << endl
-		 << " Renderer : " << glGetString(GL_RENDERER) << endl
-		 << " Version : " << glGetString(GL_VERSION) << endl
-		 << " Vendor : " << glGetString(GL_VENDOR) << endl
-		 << " GLSL Version : " << glGetString(GL_SHADING_LANGUAGE_VERSION) << endl << endl;
+	DEBUG("Engine::run => OpenGL Renderer : {}", glGetString(GL_RENDERER));
+	DEBUG("Engine::run => OpenGL Version : {}", glGetString(GL_VERSION));
+	DEBUG("Engine::run => OpenGL Vendor : {}", glGetString(GL_VENDOR));
+	DEBUG("Engine::run => GLSL Version : {}", glGetString(GL_SHADING_LANGUAGE_VERSION));
 
+	TRACE("Engine::run => Initializing application");
 	app->initialize();
+	TRACE("Engine::run => Application initialized");
 
+	TRACE("Engine::run => Entering main loop");
 	TimePoint last_time{};
 	Duration accumulator{};
 	while(_running)
@@ -102,13 +128,16 @@ int Engine::run(Application* app)
 		SDL_GL_SwapWindow(_wnd);
 	}
 
+	TRACE("Engine::run => Exited main loop");
 	delete app;
 
 	SDL_GL_DeleteContext(ctx);
 	SDL_DestroyWindow(_wnd);
 	_wnd = nullptr;
+	TRACE("Engine::run => Window destroyed");
 
 	SDL_Quit();
+	TRACE("Engine::run => Bye ({})\n", _exit_code);
 	return _exit_code;
 }
 
