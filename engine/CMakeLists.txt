@@ -48,6 +48,9 @@ add_library(engine SHARED
 		source/resource/VertexArray.cpp
 		source/resource/Buffer.cpp
 
+		include/engine/utils/filesystem/resolver.hpp
+		include/engine/utils/filesystem/path.hpp
+		include/engine/utils/filesystem/fwd.hpp
 		include/engine/utils/BitmaskOperators.hpp
 		include/engine/utils/Json.hpp
 		include/engine/utils/Sol.hpp
@@ -81,7 +84,7 @@ target_compile_definitions(engine
 		PUBLIC GLM_FORCE_RADIANS GLAD_GLAPI_EXPORT)
 
 target_link_libraries(engine ${DEFAULT_LINKER_OPTIONS}
-		${SDL2_LIBRARIES} ${Boost_LIBRARIES})
+		${SDL2_LIBRARIES})
 
 install(TARGETS engine
 		ARCHIVE  DESTINATION lib

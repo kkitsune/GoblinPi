@@ -23,10 +23,10 @@
       <sourceFolder url="file://$MODULE_DIR$/engine/include/spdlog/details/os.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/engine/include/spdlog/details/logger_impl.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/engine/include/spdlog/details/async_log_helper.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/engine/include/spdlog/details/null_mutex.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/engine/include/spdlog/details/mpmc_bounded_q.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/engine/include/spdlog/details/format.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/engine/include/spdlog/details/spdlog_impl.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/engine/include/spdlog/details/mpmc_bounded_q.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/engine/include/spdlog/details/null_mutex.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/engine/include/spdlog/details/pattern_formatter_impl.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/engine/include/spdlog/formatter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/engine/include/spdlog/spdlog.h" isTestSource="false" />
@@ -37,6 +37,9 @@
       <sourceFolder url="file://$MODULE_DIR$/engine/include/engine/resource/Resource.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/engine/include/engine/utils/BitmaskOperators.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/engine/include/engine/utils/Sol.hpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/engine/include/engine/utils/filesystem/path.hpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/engine/include/engine/utils/filesystem/fwd.hpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/engine/include/engine/utils/filesystem/resolver.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/engine/include/engine/utils/Json.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/engine/include/engine/Engine.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/engine/include/engine/InputEnums.hpp" isTestSource="false" />

@@ -5,7 +5,7 @@ add_executable(example MACOSX_BUNDLE
 )
 
 target_link_libraries(example ${DEFAULT_LINKER_OPTIONS} engine
-		${SDL2_LIBRARIES} ${Boost_LIBRARIES})
+		${SDL2_LIBRARIES})
 
 target_compile_options(example
 		PRIVATE ${DEFAULT_COMPILE_OPTIONS})

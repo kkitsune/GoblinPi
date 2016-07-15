@@ -2,7 +2,6 @@
 
 #include <SDL2/SDL.h>
 #include <iostream>
-#include <SDL2/SDL_video.h>
 
 using namespace std;
 using namespace glm;

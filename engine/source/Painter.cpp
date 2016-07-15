@@ -1,4 +1,4 @@
-#include <boost/filesystem.hpp>
+#include <engine/utils/filesystem/path.hpp>
 #include <engine/Painter.hpp>
 #include <glad/glad.h>
 
@@ -185,7 +185,7 @@ mat2x3 Painter::current_transform()
 
 int Painter::create_image(string const& file, ImageFlags flags)
 {
-	if(!boost::filesystem::exists(file)) throw std::invalid_argument("Image file '" + file + "' does not exist");
+	if(!filesystem::path(file).exists()) throw std::invalid_argument("Image file '" + file + "' does not exist");
 	return nvgCreateImage(_vg, file.c_str(), static_cast<int>(flags));
 }
 
@@ -298,7 +298,7 @@ void Painter::stroke()
 
 int Painter::create_font(string const& name, string const& file)
 {
-	if(!boost::filesystem::exists(file)) throw std::invalid_argument("Font file '" + file + "' does not exist");
+	if(!filesystem::path(file).exists()) throw std::invalid_argument("Font file '" + file + "' does not exist");
 	return nvgCreateFont(_vg, name.c_str(), file.c_str());
 }
 
