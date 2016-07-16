@@ -48,10 +48,8 @@ add_library(engine SHARED
 		source/resource/VertexArray.cpp
 		source/resource/Buffer.cpp
 
-		include/engine/utils/filesystem/resolver.hpp
-		include/engine/utils/filesystem/path.hpp
-		include/engine/utils/filesystem/fwd.hpp
 		include/engine/utils/BitmaskOperators.hpp
+		include/engine/utils/FileSystem.hpp
 		include/engine/utils/Json.hpp
 		include/engine/utils/Sol.hpp
 
