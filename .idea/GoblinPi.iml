@@ -71,8 +71,8 @@
           <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/GoblinPi-fac77d9b/fac77d9b/Debug/engine/include" />
           <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/GoblinPi-fac77d9b/fac77d9b/Release/engine/include" />
           <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/GoblinPi-fac77d9b/fac77d9b/RelWithDebInfo/engine/include" />
-          <root url="file://C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/5.4.0/include" />
-          <root url="file://C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/5.4.0/include-fixed" />
+          <root url="file://C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/6.1.0/include-fixed" />
+          <root url="file://C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/6.1.0/include" />
           <root url="file://C:/msys64/mingw64/x86_64-w64-mingw32/include" />
           <root url="file://C:/msys64/mingw64/include" />
         </CLASSES>
@@ -81,8 +81,8 @@
           <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/GoblinPi-fac77d9b/fac77d9b/Debug/engine/include" />
           <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/GoblinPi-fac77d9b/fac77d9b/Release/engine/include" />
           <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/GoblinPi-fac77d9b/fac77d9b/RelWithDebInfo/engine/include" />
-          <root url="file://C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/5.4.0/include" />
-          <root url="file://C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/5.4.0/include-fixed" />
+          <root url="file://C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/6.1.0/include-fixed" />
+          <root url="file://C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/6.1.0/include" />
           <root url="file://C:/msys64/mingw64/x86_64-w64-mingw32/include" />
           <root url="file://C:/msys64/mingw64/include" />
         </SOURCES>
