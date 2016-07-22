@@ -11,7 +11,6 @@ add_library(engine SHARED
 		include/spdlog/details/null_mutex.h
 		include/spdlog/details/registry.h
 		include/spdlog/details/log_msg.h
-		include/spdlog/details/format.h
 		include/spdlog/details/os.h
 		include/spdlog/sinks/ansicolor_sink.h
 		include/spdlog/sinks/ostream_sink.h
@@ -24,6 +23,7 @@ add_library(engine SHARED
 		include/spdlog/sinks/msvc_sink.h
 		include/spdlog/sinks/null_sink.h
 		include/spdlog/sinks/sink.h
+		include/spdlog/fmt/format.h
 		include/spdlog/async_logger.h
 		include/spdlog/formatter.h
 		include/spdlog/tweakme.h
