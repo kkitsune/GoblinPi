@@ -4,6 +4,7 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/engine/include/spdlog/common.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/engine/include/spdlog/tweakme.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/engine/include/spdlog/fmt/format.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/engine/include/spdlog/logger.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/engine/include/spdlog/sinks/sink.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/engine/include/spdlog/sinks/android_sink.h" isTestSource="false" />
@@ -22,12 +23,11 @@
       <sourceFolder url="file://$MODULE_DIR$/engine/include/spdlog/details/file_helper.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/engine/include/spdlog/details/os.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/engine/include/spdlog/details/logger_impl.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/engine/include/spdlog/details/async_log_helper.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/engine/include/spdlog/details/null_mutex.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/engine/include/spdlog/details/format.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/engine/include/spdlog/details/spdlog_impl.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/engine/include/spdlog/details/mpmc_bounded_q.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/engine/include/spdlog/details/pattern_formatter_impl.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/engine/include/spdlog/details/spdlog_impl.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/engine/include/spdlog/details/null_mutex.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/engine/include/spdlog/details/async_log_helper.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/engine/include/spdlog/formatter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/engine/include/spdlog/spdlog.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/engine/include/spdlog/async_logger.h" isTestSource="false" />
@@ -67,22 +67,22 @@
     <orderEntry type="module-library">
       <library name="Header Search Paths">
         <CLASSES>
-          <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/GoblinPi-fac77d9b/fac77d9b/MinSizeRel/engine/include" />
-          <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/GoblinPi-fac77d9b/fac77d9b/Debug/engine/include" />
-          <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/GoblinPi-fac77d9b/fac77d9b/Release/engine/include" />
-          <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/GoblinPi-fac77d9b/fac77d9b/RelWithDebInfo/engine/include" />
-          <root url="file://C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/6.1.0/include-fixed" />
+          <root url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/GoblinPi-fac77d9b/fac77d9b/MinSizeRel/engine/include" />
+          <root url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/GoblinPi-fac77d9b/fac77d9b/Debug/engine/include" />
+          <root url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/GoblinPi-fac77d9b/fac77d9b/Release/engine/include" />
+          <root url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/GoblinPi-fac77d9b/fac77d9b/RelWithDebInfo/engine/include" />
           <root url="file://C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/6.1.0/include" />
+          <root url="file://C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/6.1.0/include-fixed" />
           <root url="file://C:/msys64/mingw64/x86_64-w64-mingw32/include" />
           <root url="file://C:/msys64/mingw64/include" />
         </CLASSES>
         <SOURCES>
-          <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/GoblinPi-fac77d9b/fac77d9b/MinSizeRel/engine/include" />
-          <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/GoblinPi-fac77d9b/fac77d9b/Debug/engine/include" />
-          <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/GoblinPi-fac77d9b/fac77d9b/Release/engine/include" />
-          <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/GoblinPi-fac77d9b/fac77d9b/RelWithDebInfo/engine/include" />
-          <root url="file://C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/6.1.0/include-fixed" />
+          <root url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/GoblinPi-fac77d9b/fac77d9b/MinSizeRel/engine/include" />
+          <root url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/GoblinPi-fac77d9b/fac77d9b/Debug/engine/include" />
+          <root url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/GoblinPi-fac77d9b/fac77d9b/Release/engine/include" />
+          <root url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/GoblinPi-fac77d9b/fac77d9b/RelWithDebInfo/engine/include" />
           <root url="file://C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/6.1.0/include" />
+          <root url="file://C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/6.1.0/include-fixed" />
           <root url="file://C:/msys64/mingw64/x86_64-w64-mingw32/include" />
           <root url="file://C:/msys64/mingw64/include" />
         </SOURCES>
