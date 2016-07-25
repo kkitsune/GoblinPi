@@ -14,6 +14,8 @@ set(CMAKE_SKIP_BUILD_RPATH            FALSE) # Add absolute path to all dependen
 set(CMAKE_BUILD_WITH_INSTALL_RPATH    FALSE) # Use CMAKE_INSTALL_RPATH for INSTALL
 set(CMAKE_INSTALL_RPATH_USE_LINK_PATH FALSE) # Do NOT add path to dependencies for INSTALL
 
+cmake_policy(SET CMP0004 OLD)
+
 find_package(SDL2 REQUIRED)
 
 add_subdirectory(engine)
